@@ -36,6 +36,12 @@ public class TestOperationMathematique {
 
             assertArrayEquals(expectedArray, operation.sort(inputArray), "Array should be sorted in descending order");
         }
+        @Test
+        public void testFactorialNegativeNumberException() {
+            OperationMathematique operation = new OperationMathematique();
+            assertThrows(IllegalParamISIException.class, () -> operation.factorial(-1),
+                    "Expected exception for negative input");
+        }
 
 
 
