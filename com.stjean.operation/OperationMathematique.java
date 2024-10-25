@@ -34,5 +34,10 @@ public class OperationMathematique {
         Collections.sort(intList, Collections.reverseOrder()); // Sort in descending order
         return intList.toArray(new Integer[0]); // Convert back to array
     }
+    public double maxNumba(double[] values) {
+        return Arrays.stream(values).max().orElseThrow();
+    }
+
+
 }
 
