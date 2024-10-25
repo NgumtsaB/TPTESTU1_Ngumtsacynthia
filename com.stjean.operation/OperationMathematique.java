@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class OperationMathematique {
     // checking if a number is positive
     public boolean estpositif(int number){
@@ -21,6 +25,12 @@ public class OperationMathematique {
     public static void main(String[] args) {
         int num = 5; // Example number
         System.out.println("Factorial of " + num + " is: " + factorial(num));
+    }
+
+    public Integer[] sort(Integer[] list) {
+        List<Integer> intList = Arrays.asList(list); // Convert array to list for easy sorting
+        Collections.sort(intList, Collections.reverseOrder()); // Sort in descending order
+        return intList.toArray(new Integer[0]); // Convert back to array
     }
 }
 
