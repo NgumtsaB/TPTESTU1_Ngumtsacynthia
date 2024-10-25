@@ -1,7 +1,7 @@
 public class TestOperationMathematique {
     import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
-
+    import org.junit.jupiter.api.Test;
+    import java.util.Arrays;
     public class TestOperationMathematique {
 
         @Test
@@ -27,6 +27,19 @@ import org.junit.jupiter.api.Test;
 
             assertEquals(8, operation.add(3, 5), "3 + 5 should equal 8");
         }
+        @Test
+        public void testSort() {
+            OperationMathematique operation = new OperationMathematique();
+
+            Integer[] inputArray = {3, 1, 4, 1, 5, 9};
+            Integer[] expectedArray = {9, 5, 4, 3, 1, 1};
+
+            assertArrayEquals(expectedArray, operation.sort(inputArray), "Array should be sorted in descending order");
+        }
+
+
+
+
     }
 
 }
