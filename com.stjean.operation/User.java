@@ -8,6 +8,18 @@ public class User {
     private double balancePersonnel;
 
     // Constructor, getters, setters
+    public class EmailInvalidException extends Exception { /* ... */ }
+    public class DeletionInvalidException extends Exception { /* ... */ }
+
+    public double analyseSoldeGeneral() throws NegativeGeneralBalanceException {
+        double totalBalance = users.stream().mapToDouble(User::getBalancePersonnel).sum();
+        if (totalBalance < 0) throw new NegativeGeneralBalanceException("Negative general balance");
+        return totalBalance;
+    }
+
+    public User getRichestUser() { /* Find user with max balance */ }
+
+
 }
 
     public static ArrayList<User> users = new ArrayList<>();
@@ -17,5 +29,3 @@ public class User {
     public static void list() { /* List all users */ }
     public static void display(int id) { /* Display specific user */ }
 
-public class EmailInvalidException extends Exception { /* ... */ }
-public class DeletionInvalidException extends Exception { /* ... */ }
