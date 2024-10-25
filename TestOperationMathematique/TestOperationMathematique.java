@@ -42,6 +42,11 @@ public class TestOperationMathematique {
             assertThrows(IllegalParamISIException.class, () -> operation.factorial(-1),
                     "Expected exception for negative input");
         }
+        @Test
+        public void testMaxNumba() {
+            OperationMathematique operation = new OperationMathematique();
+            assertEquals(9.5, operation.maxNumba(new double[] { 1.2, 3.4, 9.5, 2.2 }));
+        }
 
 
 
