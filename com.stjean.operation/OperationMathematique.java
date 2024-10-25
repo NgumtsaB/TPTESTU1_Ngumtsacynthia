@@ -15,7 +15,9 @@ public class OperationMathematique {
         System.out.println(operation.estPositif(-4));  // Output: false
     }
 
-    public static int factorial(int number) {
+    public int factorial(int number) throws IllegalParamISIException {
+        if (number < 0) throw new IllegalParamISIException("Factorial of a negative number is undefined");
+        // existing factorial logics
         if (number <= 1) {
             return 1;
         }
